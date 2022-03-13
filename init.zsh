@@ -1,5 +1,3 @@
-
-
 ######################################################################
 #<
 #
@@ -25,7 +23,7 @@ p6df::modules::homebrew::deps() {
 ######################################################################
 p6df::modules::homebrew::init() {
 
-  export HOMEBREW_EDITOR=vim
+  p6_env_export "HOMEBREW_EDITOR" "vim"
 
   alias p6_hbr=p6df::modules::homebrew::remove
   alias p6_hbcr=p6df::modules::homebrew::casks::remove
