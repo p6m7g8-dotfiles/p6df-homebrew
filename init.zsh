@@ -76,3 +76,14 @@ p6df::modules::homebrew::brews::remove() {
     brew uninstall --ignore-dependencies --force $formula
   done
 }
+
+p6df::modules::homebrew::nuke() {
+
+  rm -rf /usr/local/; mkdir -p /usr/local
+}
+
+p6df::modules::homebrew::install() {
+
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
