@@ -48,6 +48,8 @@
 - p6df::modules::homebrew::casks::remove()
 - p6df::modules::homebrew::deps()
 - p6df::modules::homebrew::init()
+- p6df::modules::homebrew::install()
+- p6df::modules::homebrew::nuke()
 - p6df::modules::homebrew::remove()
 
 
