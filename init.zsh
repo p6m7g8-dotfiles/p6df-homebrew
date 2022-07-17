@@ -19,6 +19,7 @@ p6df::modules::homebrew::deps() {
 #
 # Function: p6df::modules::homebrew::init()
 #
+#  Environment:	 HOMEBREW_EDITOR
 #>
 ######################################################################
 p6df::modules::homebrew::init() {
@@ -77,11 +78,26 @@ p6df::modules::homebrew::brews::remove() {
   done
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::homebrew::nuke()
+#
+#>
+######################################################################
 p6df::modules::homebrew::nuke() {
 
   rm -rf /usr/local/; mkdir -p /usr/local
 }
 
+######################################################################
+#<
+#
+# Function: p6df::modules::homebrew::install()
+#
+#  Environment:	 HEAD
+#>
+######################################################################
 p6df::modules::homebrew::install() {
 
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
