@@ -24,7 +24,10 @@ p6df::modules::homebrew::deps() {
 ######################################################################
 p6df::modules::homebrew::init() {
 
+  local homebrew_prefix=$(brew --config | awk -F: '/PREFIX/ { print $2 }' | sed -e 's, ,,g')
+
   p6_env_export "HOMEBREW_EDITOR" "vim"
+  p6_env_export "HOMEBREW_PREFIX" "$homebrew_prefix"
 
   alias p6_hbr=p6df::modules::homebrew::remove
   alias p6_hbcr=p6df::modules::homebrew::casks::remove
@@ -87,7 +90,8 @@ p6df::modules::homebrew::brews::remove() {
 ######################################################################
 p6df::modules::homebrew::nuke() {
 
-  rm -rf /usr/local/; mkdir -p /usr/local
+  rm -rf $HOMEBREW_PREFIX
+  mkdir -p $HOMEBREW_PREFIX
 }
 
 ######################################################################
@@ -102,4 +106,3 @@ p6df::modules::homebrew::install() {
 
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
-
