@@ -19,7 +19,7 @@ p6df::modules::homebrew::deps() {
 #
 # Function: p6df::modules::homebrew::init()
 #
-#  Environment:	 HOMEBREW_EDITOR
+#  Environment:	 HOMEBREW_EDITOR HOMEBREW_PREFIX PREFIX
 #>
 ######################################################################
 p6df::modules::homebrew::init() {
@@ -86,6 +86,7 @@ p6df::modules::homebrew::brews::remove() {
 #
 # Function: p6df::modules::homebrew::nuke()
 #
+#  Environment:	 HOMEBREW_PREFIX
 #>
 ######################################################################
 p6df::modules::homebrew::nuke() {
