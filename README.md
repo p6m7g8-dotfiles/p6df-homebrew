@@ -10,8 +10,7 @@
   - [Summary](#summary)
   - [Contributing](#contributing)
   - [Code of Conduct](#code-of-conduct)
-  - [Changes](#changes)
-    - [Usage](#usage)
+  - [Usage](#usage)
   - [Author](#author)
 
 ### Badges
@@ -34,26 +33,57 @@
 
 - [Code of Conduct](https://github.com/p6m7g8/.github/blob/master/CODE_OF_CONDUCT.md)
 
-## Changes
-
-- [Change Log](CHANGELOG.md)
-
 ## Usage
+
+
+### Aliases
+
+- p6_hbbr -> p6df::modules::homebrew::util::brew::remove
+- p6_hbcr -> p6df::modules::homebrew::util::casks::remove
+- p6_hbr -> p6df::modules::homebrew::util::remove
+
+### Functions
 
 ### p6df-homebrew:
 
 #### p6df-homebrew/init.zsh:
 
-- p6df::modules::homebrew::brews::remove()
-- p6df::modules::homebrew::casks::remove()
+- p6df::modules::homebrew::aliases::init()
 - p6df::modules::homebrew::deps()
-- p6df::modules::homebrew::init()
-- p6df::modules::homebrew::install()
-- p6df::modules::homebrew::nuke()
-- p6df::modules::homebrew::remove()
+- p6df::modules::homebrew::init(_module, dir)
+
+
+### p6df-homebrew/lib:
+
+#### p6df-homebrew/lib/cli.sh:
+
+- p6df::modules::homebrew::cli::brew::install(...)
+- p6df::modules::homebrew::cli::brew::services::start(...)
+- p6df::modules::homebrew::cli::brew::services::stop(...)
+
+#### p6df-homebrew/lib/cmd.sh:
+
+- p6df::modules::homebrew::cmd::brew(...)
+
+#### p6df-homebrew/lib/util.sh:
+
+- p6df::modules::homebrew::brews::remove()
+- p6df::modules::homebrew::util::casks::remove()
+- p6df::modules::homebrew::util::install()
+- p6df::modules::homebrew::util::nuke()
+- p6df::modules::homebrew::util::remove()
 
 
 
+## Hier
+```text
+.
+├── cli.sh
+├── cmd.sh
+└── util.sh
+
+1 directory, 3 files
+```
 ## Author
 
 Philip M . Gollucci <pgollucci@p6m7g8.com>
