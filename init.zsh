@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# shellcheck shell=bash
 ######################################################################
 #<
 #
@@ -6,9 +8,7 @@
 #>
 ######################################################################
 p6df::modules::homebrew::deps() {
-  ModuleDeps=(
-    p6m7g8-dotfiles/p6common
-  )
+  ModuleDeps=()
 }
 
 ######################################################################
@@ -27,9 +27,6 @@ p6df::modules::homebrew::aliases::init() {
   p6_return_void
 }
 
-# Warning: Using vim because no editor was set in the environment.
-# This may change in the future, so we recommend setting EDITOR,
-# or HOMEBREW_EDITOR to your preferred text editor.
 ######################################################################
 #<
 #
@@ -39,7 +36,7 @@ p6df::modules::homebrew::aliases::init() {
 #	_module -
 #	dir -
 #
-#  Environment:	 HOMEBREW_EDITOR HOMEBREW_PREFIX PREFIX
+#  Environment:	 EDITOR HOMEBREW_EDITOR HOMEBREW_PREFIX PREFIX
 #>
 ######################################################################
 p6df::modules::homebrew::init() {
@@ -48,8 +45,10 @@ p6df::modules::homebrew::init() {
 
   p6_bootstrap "$dir"
 
+  # Warning: Using vim because no editor was set in the environment.
+  # This may change in the future, so we recommend setting EDITOR,
+  # or HOMEBREW_EDITOR to your preferred text editor.
   local homebrew_prefix=$(brew --config | awk -F: '/PREFIX/ { print $2 }' | sed -e 's, ,,g')
-
   p6_env_export "HOMEBREW_EDITOR" "vim"
   p6_env_export "HOMEBREW_PREFIX" "$homebrew_prefix"
 
