@@ -4,7 +4,6 @@
 #
 # Function: p6df::modules::homebrew::util::install()
 #
-#  Environment:	 HEAD
 #>
 ######################################################################
 p6df::modules::homebrew::util::install() {

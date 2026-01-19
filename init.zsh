@@ -36,7 +36,7 @@ p6df::modules::homebrew::aliases::init() {
 #	_module -
 #	dir -
 #
-#  Environment:	 EDITOR HOMEBREW_EDITOR HOMEBREW_PREFIX PREFIX
+#  Environment:	 HOMEBREW_EDITOR HOMEBREW_PREFIX
 #>
 ######################################################################
 p6df::modules::homebrew::init() {
