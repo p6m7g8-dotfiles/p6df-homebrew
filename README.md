@@ -23,6 +23,7 @@
 - p6_hbbr IS p6df::modules::homebrew::util::brew::remove
 - p6_hbcr IS p6df::modules::homebrew::util::casks::remove
 - p6_hbr IS p6df::modules::homebrew::util::remove
+
 ### Functions
 
 ## p6df-homebrew
