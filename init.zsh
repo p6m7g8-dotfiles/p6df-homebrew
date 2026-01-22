@@ -48,7 +48,8 @@ p6df::modules::homebrew::init() {
   # Warning: Using vim because no editor was set in the environment.
   # This may change in the future, so we recommend setting EDITOR,
   # or HOMEBREW_EDITOR to your preferred text editor.
-  local homebrew_prefix=$(brew --config | awk -F: '/PREFIX/ { print $2 }' | sed -e 's, ,,g')
+#  local homebrew_prefix=$(brew --config | awk -F: '/PREFIX/ { print $2 }' | sed -e 's, ,,g')
+  local homebrew_prefix="/opt/homebrew"
   p6_env_export "HOMEBREW_EDITOR" "vim"
   p6_env_export "HOMEBREW_PREFIX" "$homebrew_prefix"
 
