@@ -67,7 +67,7 @@ p6df::modules::homebrew::util::casks::remove() {
 p6df::modules::homebrew::brews::remove() {
 
     local formuli
-    formuli=$(brew list --formula)
+    formuli=$(p6df::modules::homebrew::cmd::brew list --formula)
 
     local formula
     for formula in $formuli; do
